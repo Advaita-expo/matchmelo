@@ -1,0 +1,2 @@
+import Brand from './Brand';
+export default function SiteHeader(){return <header className="site-header"><Brand/><nav aria-label="Website navigation"><a href="/#how-it-works">How it works</a><a href="/#digital-passport">Digital Passport</a><a href="/#our-promise">Our promise</a></nav><div className="header-cta"><a className="plain-link" href="/signin">Sign in</a><a className="button small" href="/signin">Get started <span>↗</span></a></div></header>;}

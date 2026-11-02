@@ -1,35 +1,45 @@
 # Matchmelo
 
-A mobile-first interactive dating platform prototype based on the user-supplied VIBE10 blueprint. The first release is a private review experience with fictional profiles and browser-local persistence.
+A mobile-first dating project with a public website, real hosted account sign-in, private Digital Passports, profile pages, and a fictional social preview.
 
-## Run locally
+## Available now
 
-From this directory, run `python -m http.server 4173 --directory dist --bind 127.0.0.1` and visit http://127.0.0.1:4173. No build or dependencies are required. Run `node --test tests/model.test.js` for the domain behavior checks.
+- Public landing page with how it works, Digital Passport explanation, privacy and safety content, FAQs, and pilot terms.
+- Dedicated sign-in page using Sites-managed Continue with ChatGPT. Google and email-password sign-in are not configured.
+- Protected Digital Passport, My Profile, and discovery routes. Anonymous API calls return 401.
+- User-owned D1 passport records with validated introductions, adult self-declaration, policy consent, and private R2 selfie storage.
+- Camera capture or JPEG/PNG/WebP upload with explicit consent. Selfies are visible only to the member and configured reviewer.
+- Authorized review queue, member-visible decisions, stale-review protection, and transactionally recorded review history. Profile edits invalidate prior review approval.
+- Selfie removal and complete passport deletion.
+- Responsive fictional discovery, likes, matches, local conversation drafts, and video preparation. The safety/about block sits at the dashboard bottom-right without covering controls; mobile layouts stack it below content.
+- Five user-supplied demo photos in the first fictional profile gallery, with demo imagery on landing and sign-in pages.
 
-## Implemented preview
+## Important scope
 
-- Responsive discovery with ten fictional profiles, local-day quota, pass/like, preferences, and profile details.
-- Incoming likes, sent likes, mutual matches, withdrawal, and unmatching.
-- Matched conversations with browser-local message drafts. Sample received messages are prewritten, with no simulated automatic replies.
-- Broad-area exploration without GPS requests.
-- Profile editing, 18+ self-declaration, honest trust statuses, and discovery visibility.
-- Blocking, local report records, and reset controls.
-- Video-date preparation with explicit local camera/microphone permission, mute controls, device failure handling, and track cleanup. No peer calls or recordings.
+A Digital Passport is a profile and trust-status record. It is not government identity verification, an independent age check, or guaranteed selfie liveness. Real member discovery, shared messaging, live calls, operational abuse handling, and public dating-network launch readiness remain future work. Sample social messages and reports are not sent to real people.
 
-All people, likes, messages, and review statuses are fictional. Stock portraits are from Unsplash; `download-assets.py` records the source image identifiers. No real accounts, sign-in, server-enforced quota, shared messages, review delivery, or live calls are implemented. Browser-local quotas can be reset by clearing local storage. Do not use this preview for a real dating cohort.
+## Runtime and storage
 
-## Next: connected pilot
+The supplied Vinext/React Sites starter runs on Cloudflare Workers. Preserve the Sites Vite integration and dispatch-owned authentication. The production gateway provides trusted `oai-authenticated-user-id` and `oai-authenticated-user-email` headers. Native Worker API routes use those headers; protected server pages use the supplied ChatGPT auth helpers. Browser state never establishes identity.
 
-1. Provision a Supabase project and Google OAuth app; configure sign-in and invite access. Keep service-role credentials on the server only.
-2. Add PostgreSQL migrations for profiles, private preferences, daily batches, likes, matches, messages, blocks, reports, review actions, call invites, and audit logs. Enforce row-level security and moderator roles.
-3. Implement transaction-safe daily batches and quotas, eligibility filters, pairwise unique matches, and immediate block checks in every read/write path. Never trust local browser state for these rules.
-4. Connect private photo storage, signed URLs, upload validation/compression, consent and retention controls. Build the real review queue before displaying actual review badges.
-5. Connect authenticated real-time messaging and presence, using server authorization. Implement account export, deletion, reporting delivery, appeals, and audit trails.
-6. Add signed, expiring call invitations with independent acceptance, authenticated signaling, tested WebRTC, and TURN for networks that need a relay. Offer chat on connection failure. Do not record calls by default.
-7. Test cross-account access, concurrency, abuse controls, report handling, deletion, camera cleanup, accessibility, and mobile layouts before inviting adult testers. A declaration and a basic selfie challenge are not verified age or identity proof; plan appropriate assurance and operational readiness before public launch.
+`.openai/hosting.json` retains the existing Site ID and declares D1 binding `DB` and private R2 binding `BUCKET`. Schema lives in `db/schema.ts`; `drizzle/0000_illegal_darwin.sql` is the generated initial migration. Do not edit an applied migration. APIs enforce ownership and same-origin writes. Bounded request bodies are consumed at the Worker boundary before routing to avoid orphaned request streams. Private responses disable caching.
 
-## Cost planning
+The native Sites environment stores `REVIEWER_EMAIL` as a secret, configured for the current Site owner. Reviewers sign in at `/review`; other accounts cannot view the queue or its photos. The setting does not verify identity or age. Do not commit live secrets or local `.dev.vars` files.
 
-The prototype is static and has no third-party API usage. A small pilot may fit provider free tiers, subject to quotas and terms. Supabase currently lists a 500 MB database, 1 GB storage, and 5 GB egress on Free, with inactivity pausing. Cloudflare Pages static requests are free. Reliable TURN bandwidth, stronger verification, transactional email, moderation, and higher usage may introduce operating costs. These are infrastructure observations, not a guarantee of a zero-cost public service.
+## Local development
 
-Official references checked during this implementation: https://supabase.com/pricing, https://developers.cloudflare.com/pages/functions/pricing/, https://webrtc.org/getting-started/turn-server.
+Install through the Sites dependency helper, then use `npm run dev -- --port 4183 --hostname 127.0.0.1`. The portable starter simulates ChatGPT sign-in as `seedy@sites.test` only on local development requests. Production authentication is owned by Sites dispatch.
+
+Generate future migrations with `npm run db:generate`. Build through the Sites build helper, then apply each new migration once locally with the documented Wrangler D1 command using `dist/server/wrangler.json` and `.wrangler/state`. Hosted migrations are applied during Sites deployment.
+
+## Validation
+
+- `node --test tests/model.test.js tests/passport.test.js`: discovery behavior, matching, blocking, passport validation, image signatures, and same-origin writes.
+- `node node_modules/typescript/bin/tsc --noEmit`: TypeScript checking.
+- `node --check public/legacy/app.js`: standalone dashboard syntax.
+- `python tests/integration.py`: local built-Worker HTTP tests at 127.0.0.1:4184. These use fake trusted identity headers only against local test infrastructure and remove their test records. Run the local built preview with REVIEWER_EMAIL=seedy@sites.test for the reviewer fixture. Tests cover account separation, private photos, reviews, invalidated approvals, deletion, and rejected image content.
+- Browser checks cover landing, sign-in redirect, passport persistence, real profile data, responsive layouts, the supplied photo gallery, and the dashboard safety block.
+
+## Assets
+
+`public/assets/demo-1.png` through `demo-5.png` are user-provided temporary demo photos. Other sample portraits are Unsplash assets, recorded by `download-assets.py`. All sample dating identities and incoming interactions are fictional.

@@ -1,0 +1,1 @@
+export type PassportData={id:string;name:string;age:number;city:string;area:string;intent:string;bio:string;interests:string[];adult_declared_at:string;policy_accepted_at:string;review_status:string;review_note:string|null;reviewed_at:string|null;created_at:string;updated_at:string;has_selfie:boolean;selfie_submitted_at:string|null};

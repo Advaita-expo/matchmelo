@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {freshState,availableProfiles,actOnProfile,rollover,blockProfile,sendMessage,likeIncoming} from '../dist/model.js';
+import {freshState,availableProfiles,actOnProfile,rollover,blockProfile,sendMessage,likeIncoming} from '../public/legacy/model.js';
 
 test('daily discovery prevents repeated actions and survives a saved state',()=>{
   const s=freshState();

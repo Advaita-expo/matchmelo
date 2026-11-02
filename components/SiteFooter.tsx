@@ -1,0 +1,2 @@
+import Brand from './Brand';
+export default function SiteFooter(){return <footer className="site-footer"><div><Brand/><p>A little more meaningful.</p></div><div className="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Pilot terms</a><a href="/#our-promise">Safety & trust</a><a href="/signin">Sign in</a></div><span>© {new Date().getFullYear()} Matchmelo · Adults 18+ · Early access</span></footer>;}
