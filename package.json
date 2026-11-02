@@ -1,0 +1,8 @@
+{
+  "name": "matchmelo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Matchmelo mobile-first dating platform interactive prototype",
+  "scripts": {"test": "node --test tests/model.test.js"}
+}

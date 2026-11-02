@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244b3d">
+  <meta name="description" content="Meet a little more meaningfully. Matchmelo brings thoughtful daily discoveries, visible likes, and conversations that start with a spark.">
+  <title>Matchmelo — A little more meaningful.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="wordmark" href="#discover" aria-label="Matchmelo home"><span class="brand-flower" aria-hidden="true">✳</span> matchmelo<span class="brand-dot">.</span></a>
+    <div class="top-tagline">Less scrolling. More <em>something real.</em></div>
+    <div class="top-actions"><span class="pilot-badge"><span></span> PRIVATE PREVIEW</span><button class="avatar-button" data-action="navigate" data-view="profile" aria-label="Your profile">Y</button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-intro"><span class="eyebrow">YOUR LITTLE CORNER</span><p>A little room<br>for possibility.</p></div>
+      <nav aria-label="Main navigation" id="navigation"></nav>
+      <div class="sidebar-bottom"><div class="leaf-icon">✧</div><strong>Your pace. Your people.</strong><p>Good connections take a little care. Take your time.</p><button class="text-button" data-action="safety">Our safety promise <span>↗</span></button></div>
+      <div class="sidebar-legal"><button data-action="about">About this preview</button><span>© <span id="year"></span> Matchmelo</span></div>
+    </aside>
+    <main id="main" tabindex="-1"></main>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile navigation" id="mobile-navigation"></nav>
+  <dialog id="modal" aria-label="Matchmelo dialog"><div id="modal-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

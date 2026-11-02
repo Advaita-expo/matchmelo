@@ -1,0 +1,7 @@
+.sites/
+.env
+.env.*
+node_modules/
+*.tar.gz
+*.tgz
+__pycache__/
