@@ -1,0 +1,61 @@
+{
+  "description": "User-supplied demo imagery extracted unchanged from the source PDF; no identity, age, or verification status is asserted.",
+  "images": [
+    {
+      "file": "portrait-01.png",
+      "width": 410,
+      "height": 460,
+      "source_page": 1,
+      "sha256": "f7bb540745b2c95ded13f39feed64b014d1593999b292689f873c64570fccb82"
+    },
+    {
+      "file": "portrait-02.png",
+      "width": 437,
+      "height": 470,
+      "source_page": 2,
+      "sha256": "7080a864cf5c44a49906db7f9502753cb244f895b65b70978579b56d2543a570"
+    },
+    {
+      "file": "portrait-03.png",
+      "width": 430,
+      "height": 516,
+      "source_page": 5,
+      "sha256": "31cdffbaa0561fa1ecfcb9f1834549bef07400590039068f00d47b6a391f6e56"
+    },
+    {
+      "file": "portrait-04.png",
+      "width": 435,
+      "height": 490,
+      "source_page": 7,
+      "sha256": "e32fa384242af88498a85e6d4c73f16db6558b97ba3e3ee88a50233adfa4fc58"
+    },
+    {
+      "file": "portrait-05.png",
+      "width": 440,
+      "height": 563,
+      "source_page": 8,
+      "sha256": "d0ee2327d7576a83a41ce178b2a8e39c33f9cba789e6ea92e6a744b6c0ae328d"
+    },
+    {
+      "file": "portrait-06.png",
+      "width": 337,
+      "height": 412,
+      "source_page": 12,
+      "sha256": "c0554c1af3c3a2d3d92f3d54e0c26d42cb370b00cf802404660f1099a6c27f1c"
+    },
+    {
+      "file": "portrait-07.png",
+      "width": 447,
+      "height": 532,
+      "source_page": 22,
+      "sha256": "315eff467974976c9660e9dba116f193d258df39c011c7aacb50be5d1d6aa708"
+    },
+    {
+      "file": "portrait-08.png",
+      "width": 430,
+      "height": 492,
+      "source_page": 24,
+      "sha256": "c46f0c6d67ab0dbafe825a22672b45b0d60f062c65e53984c5433dbd1db488cf"
+    }
+  ]
+}

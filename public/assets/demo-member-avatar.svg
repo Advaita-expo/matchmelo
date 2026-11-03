@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900">
+  <rect width="720" height="900" fill="#e8edda"/>
+  <circle cx="640" cy="80" r="210" fill="#f1d9cb"/>
+  <circle cx="10" cy="900" r="250" fill="#d4dfbc"/>
+  <path d="M85 150h72m-36-36v72" stroke="#a3b184" stroke-width="4"/>
+  <circle cx="360" cy="385" r="150" fill="#faf9f3" stroke="#c7d4b4" stroke-width="2"/>
+  <circle cx="360" cy="350" r="49" fill="#8da278"/>
+  <path d="M267 454c0-53 41-83 93-83s93 30 93 83" fill="#8da278"/>
+  <text x="360" y="620" font-family="Arial,sans-serif" font-size="33" font-weight="600" fill="#244b3d" text-anchor="middle">Your demo profile</text>
+  <text x="360" y="663" font-family="Arial,sans-serif" font-size="19" fill="#77866a" text-anchor="middle">A little space to be yourself.</text>
+  <text x="360" y="830" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" fill="#6f8460" text-anchor="middle">MATCHMELO</text>
+</svg>

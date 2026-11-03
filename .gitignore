@@ -29,6 +29,7 @@ yarn-error.log*
 # Local environment and keys
 .env*
 .dev.vars*
+!.env.example
 *.pem
 
 # Checkout-local tool state
@@ -43,3 +44,5 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+__pycache__/
+/tmp/

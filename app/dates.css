@@ -1,0 +1,64 @@
+.date-main{padding-top:50px;padding-bottom:55px}
+.date-heading{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:60px;align-items:center;margin-bottom:38px}
+.date-heading .overline{color:#85996b;font-size:9px}
+.date-heading h1{font:62px/1.04 var(--serif);letter-spacing:-1.6px;margin:23px 0}
+.date-heading>div>p{font-size:13px;line-height:1.9;color:var(--muted);max-width:540px}
+.date-heading-note{background:#e9eedb;border:1px solid #dbe3cb;border-radius:12px;padding:28px}
+.date-heading-note>svg{color:#98a67c;margin-bottom:20px}
+.date-heading-note strong{font:30px/1.05 var(--serif);display:block;margin-bottom:15px}
+.date-heading-note p{font-size:10px;line-height:1.9;color:#879875;margin:0}
+.date-location-form{background:#f0f3e6;border:1px solid #dfe5d1;border-radius:11px;padding:23px 25px;margin-bottom:45px}
+.date-location-form>label{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:15px;color:#66834e}
+.date-location-form>div{display:flex;gap:12px}
+.date-location-form input{min-width:0;flex:1;background:#fcfdf7;border:1px solid #d4ddc6;border-radius:6px;padding:14px 16px;color:var(--ink);font-size:13px}
+.date-location-form>p{font-size:10px;line-height:1.8;color:#81936e;margin:13px 0 0}
+.date-results-heading{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:26px}
+.date-results-heading .overline{font-size:8px;color:#95a380}
+.date-results-heading h2{font:35px/1.15 var(--serif);letter-spacing:-.6px;margin:13px 0 0;overflow-wrap:anywhere}
+.date-results-heading>.button{flex-shrink:0}
+.date-category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}
+.date-category-tabs>button{padding:10px 18px;font-size:11px;min-height:38px;border:1px solid #dce3cd;background:transparent;color:#869a6d;border-radius:22px}
+.date-category-tabs>button.selected{background:var(--green);border-color:var(--green);color:white}
+.date-idea-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px}
+.date-idea-card{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fffef9;display:flex;flex-direction:column}
+.date-idea-art{position:relative;height:150px;display:grid;place-items:center;background:#e6edda;color:#7e9866;overflow:hidden}
+.date-idea-art>svg{position:relative;z-index:1}
+.date-idea-art:before{content:'';width:145px;height:145px;border:1px solid #abbc8e66;border-radius:50%;position:absolute;left:-32px;bottom:-68px}
+.date-idea-art>span{position:absolute;right:21px;top:18px;font-size:21px;color:#a9b68e}
+.date-idea-art>small{position:absolute;bottom:16px;font-size:7px;letter-spacing:1.9px;color:#899c70}
+.date-idea-card.dinner .date-idea-art{background:#efe5d8;color:#b38e6d}
+.date-idea-card.dessert .date-idea-art{background:#f3e5df;color:#bb9780}
+.date-idea-card.walk .date-idea-art{background:#e3e9dc;color:#7e966e}
+.date-idea-body{padding:23px 19px 20px;display:flex;flex-direction:column;flex:1}
+.date-idea-body h3{font:26px/1.08 var(--serif);letter-spacing:-.4px;margin:0 0 15px}
+.date-idea-body>p{font-size:10px;line-height:1.9;color:#879875;margin-bottom:18px}
+.date-idea-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:auto;margin-bottom:22px}
+.date-idea-tags>span{font-size:7px;color:#8a9e70;background:#eff3e5;border-radius:3px;padding:5px 6px}
+.date-idea-body>.button{font-size:9px;padding:11px 9px;gap:6px;min-height:39px}
+.date-map-note{font-size:10px;color:#8d9c7b;line-height:1.8;display:flex;justify-content:center;align-items:center;gap:7px;margin:23px 0 0}
+.date-offers{border-top:1px solid var(--line);margin-top:60px;padding-top:55px}
+.date-offers-heading{max-width:600px;margin-bottom:30px}
+.date-offers-heading>.overline{font-size:8px;color:#9aa584}
+.date-offers h2{font:42px/1.1 var(--serif);letter-spacing:-.8px;margin:17px 0}
+.date-offers-heading>p{font-size:12px;line-height:1.9;color:#859675}
+.date-coupon-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.date-coupon{padding:25px 27px;border:1px dashed #d0c3aa;border-radius:10px;background:#f4eee3}
+.coupon-demo-label{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:600;letter-spacing:.7px;color:#927a59}
+.date-coupon h3{font:31px/1.1 var(--serif);letter-spacing:-.4px;margin:20px 0 13px;color:#7f7458}
+.date-coupon>p{font-size:11px;line-height:1.8;color:#9b8e72;margin-bottom:23px}
+.coupon-code-line{display:flex;gap:13px;align-items:center;justify-content:space-between;border-top:1px dashed #d6cbb6;border-bottom:1px dashed #d6cbb6;padding:17px 0;margin-bottom:16px}
+.coupon-code-line>code{font:600 16px/1.4 var(--sans);letter-spacing:1.6px;user-select:all;color:#887959}
+.coupon-code-line>.button{font-size:9px;color:#8a805f;border-color:#d5cbb6;padding:9px 12px}
+.date-coupon>small{font-size:10px;line-height:1.8;color:#998c70;display:block}
+.date-copy-status{font-size:11px;color:#87996d;padding-top:15px}
+.date-make-plan{display:flex;align-items:center;gap:25px;padding:30px;background:#eaf0dd;border-radius:11px;margin-top:45px}
+.date-make-plan>svg{color:#91a374}
+.date-make-plan>div{flex:1}
+.date-make-plan h2{font:29px/1.1 var(--serif);letter-spacing:-.4px;margin:0 0 11px}
+.date-make-plan p{font-size:10px;color:#8a9e72;line-height:1.8;margin:0}
+.date-make-plan>.button{flex-shrink:0;font-size:10px}
+.live-person-actions:has(.plan-date-link){flex-wrap:wrap}
+.live-person-actions>.plan-date-link{flex:1 0 100%;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;color:#7f9566;padding:8px 0 0}
+.live-chat>header>a{width:33px;height:33px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#7d9463}
+@media(max-width:1100px){.date-idea-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.date-idea-art{height:145px}.date-idea-body{padding:23px}.date-idea-body h3{font-size:29px}.date-idea-body>p{font-size:11px}.date-idea-tags>span{font-size:8px}.date-idea-body>.button{font-size:11px}.date-heading h1{font-size:56px}.date-heading{gap:35px}.date-make-plan{gap:20px;padding:25px}}
+@media(max-width:740px){.date-main{padding-top:35px;padding-bottom:35px}.date-heading{grid-template-columns:1fr;margin-bottom:25px;gap:0}.date-heading h1{font-size:49px;letter-spacing:-1px}.date-heading>div>p{font-size:12px}.date-heading-note{display:none}.date-location-form{padding:20px 17px;margin-bottom:33px}.date-location-form>label{font-size:11px}.date-location-form>div{flex-direction:column;gap:10px}.date-location-form input{font-size:12px;padding:14px}.date-location-form .button{font-size:11px}.date-location-form>p{font-size:9px}.date-results-heading{display:block}.date-results-heading h2{font-size:32px;margin-bottom:20px}.date-results-heading>.button{font-size:10px}.date-category-tabs{gap:6px}.date-category-tabs>button{font-size:10px;padding:9px 13px;min-height:36px}.date-idea-grid{grid-template-columns:1fr;gap:19px}.date-idea-art{height:140px}.date-idea-body{padding:23px}.date-idea-body h3{font-size:31px}.date-idea-body>p{font-size:11px}.date-idea-tags>span{font-size:8px}.date-map-note{font-size:9px;align-items:flex-start;justify-content:flex-start}.date-offers{padding-top:40px;margin-top:40px}.date-offers h2{font-size:37px}.date-offers-heading>p{font-size:11px}.date-coupon-grid{grid-template-columns:1fr;gap:18px}.date-coupon{padding:24px 20px}.date-coupon h3{font-size:30px}.coupon-code-line{gap:8px}.coupon-code-line>code{font-size:14px;letter-spacing:1px}.coupon-code-line>.button{font-size:8px;padding:9px}.coupon-demo-label{font-size:8px}.date-make-plan{padding:24px 20px;display:block;margin-top:30px}.date-make-plan>svg{margin-bottom:17px}.date-make-plan h2{font-size:29px}.date-make-plan p{font-size:10px}.date-make-plan>.button{margin-top:23px;font-size:10px}.live-person-actions>.plan-date-link{font-size:10px}.live-collection .plan-date-link{font-size:8px}.live-chat>header{gap:8px}.live-chat>header>a{width:29px;height:29px;flex-shrink:0}.live-chat>header>a>svg{width:15px}}

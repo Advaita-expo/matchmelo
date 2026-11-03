@@ -1,0 +1,8 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {safeNext,dayInZone,validatePreferences,pair,matchId,otherMemberId} from '../lib/core.js';
+test('login return paths stay on the application origin',()=>{for(const value of ['https://evil.test','//evil.test','/\\evil.test','/api/auth/sign-out'])assert.equal(safeNext(value),'/passport');assert.equal(safeNext('/discover#messages'),'/discover#messages');});
+test('daily boundaries use the saved account time zone',()=>{const t=new Date('2026-11-02T20:00:00Z');assert.equal(dayInZone('Asia/Kolkata',t),'2026-11-03');assert.equal(dayInZone('UTC',t),'2026-11-02');});
+test('preferences reject underage ranges and invalid zones',()=>{const p={gender:'unspecified',interestedIn:['everyone'],minAge:18,maxAge:35,timezone:'Asia/Kolkata',visibility:true};assert.equal(validatePreferences(p).visibility,true);assert.throws(()=>validatePreferences({...p,minAge:17}));assert.throws(()=>validatePreferences({...p,maxAge:12}));assert.throws(()=>validatePreferences({...p,timezone:'Not/AZone'}));});
+test('opposite-direction likes have one canonical match key',()=>{assert.deepEqual(pair('z','a'),['a','z']);assert.equal(matchId('one','two'),matchId('two','one'));});
+test('a conversation resolves the other member and rejects self matches or outsiders',()=>{const match={user_a:'alpha',user_b:'bravo'};assert.equal(otherMemberId(match,'alpha'),'bravo');assert.equal(otherMemberId(match,'bravo'),'alpha');assert.equal(otherMemberId(match,'outsider'),null);assert.equal(otherMemberId({user_a:'alpha',user_b:'alpha'},'alpha'),null);assert.equal(otherMemberId(null,'alpha'),null);});

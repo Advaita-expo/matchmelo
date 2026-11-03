@@ -1,0 +1,6 @@
+import {runtime} from '@/lib/runtime';
+import Brand from './Brand';
+import AuthForm from './AuthForm';
+import {ArrowLeft} from 'lucide-react';
+export type AuthMode='signin'|'signup'|'forgot'|'reset'|'verify';
+export default function AuthScreen({mode,next='/passport',token='',email='',verified=false}:{mode:AuthMode;next?:string;token?:string;email?:string;verified?:boolean}){return <main className="signin-page"><section className="signin-story"><Brand/><div><span className="overline">A LITTLE MORE MEANINGFUL</span><h1>Your next chapter<br/>starts with <em>you.</em></h1><p>A thoughtful introduction.<br/>A little trust. A whole lot of possibility.</p><div className="signin-portrait"><img src="/assets/demo-3.png" alt="Illustrative demo photo" width="720" height="1138"/><span>Bring your whole, wonderfully human self.</span></div></div><a href="/" className="back-link"><ArrowLeft size={15}/> Back to Matchmelo</a></section><section className="signin-form-section"><AuthForm preview={runtime().APP_ENV==='preview'} development={runtime().APP_ENV==='development'&&['127.0.0.1','localhost','[::1]'].includes(new URL(runtime().APP_URL).hostname)} mode={mode} next={next} token={token} email={email} verified={verified}/><p className="signin-bottom">A little less scrolling. A little more spark.</p></section></main>;}

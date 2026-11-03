@@ -1,6 +1,6 @@
-import {requireChatGPTUser} from '@/app/chatgpt-auth';
-import {getPassport} from '@/lib/passports';
-import {redirect} from 'next/navigation';
-import {shell} from './shell';
+import {requireMember} from '@/lib/member';
+import {isReviewer} from '@/lib/passports';
+import MemberDashboard from '@/components/MemberDashboard';
 export const dynamic='force-dynamic';
-export default async function DiscoverPage(){const user=await requireChatGPTUser('/discover');const p=await getPassport(user.userId);if(!p)redirect('/passport');return <><link rel="stylesheet" href="/legacy/styles.css"/><div id="member-context" hidden data-member-key={user.userId} data-profile={JSON.stringify({name:p.name,age:p.age,area:p.area,bio:p.bio,interests:JSON.parse(p.interests),adult:true})}/><div dangerouslySetInnerHTML={{__html:shell}}/><script type="module" src="/legacy/app.js"/></>;}
+export const metadata={title:'Discover | Matchmelo'};
+export default async function Page(){const user=await requireMember('/discover');return <MemberDashboard user={{id:user.userId,name:user.displayName,email:user.email}} reviewer={isReviewer(user)}/>;}
